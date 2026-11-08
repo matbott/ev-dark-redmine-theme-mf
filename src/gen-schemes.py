@@ -39,6 +39,27 @@ SCHEMES = [
     ('Kanagawa Wave',     True,  '#1F1F28', '#DCD7BA', '#090618', '#7E9CD8', '#1F1F28', '#C34043', '#76946A', '#C0A36E', '#7E9CD8'),
     ('Monokai Pro',       True,  '#2D2A2E', '#FCFCFA', '#2D2A2E', '#FC9867', '#2D2A2E', '#FF6188', '#A9DC76', '#FFD866', '#FC9867'),
     ('Ayu Dark',          True,  '#0A0E14', '#B3B1AD', '#0A0E14', '#59C2FF', '#0A0E14', '#FF3333', '#C2D94C', '#FF8F40', '#59C2FF'),
+    # --- añadidas: 10 dark + 10 light (variedad) ---
+    ('Material Dark', True, '#232322', '#E5E5E5', '#ABABAA', '#F6981E', '#232322', '#C65960', '#457B24', '#F6981E', '#134EB2'),
+    ('Palenight', True, '#292D3E', '#BFC7D5', '#9299A8', '#FFCB6B', '#292D3E', '#E08D97', '#C3E88D', '#FFCB6B', '#82AAFF'),
+    ('Cobalt2', True, '#132738', '#FFFFFF', '#B8BEC3', '#FFE50A', '#132738', '#FF5454', '#38DE21', '#FFE50A', '#1460D2'),
+    ('Nightfox', True, '#192330', '#CDCECF', '#979B9F', '#DBC074', '#192330', '#CA798D', '#81B29A', '#DBC074', '#719CD6'),
+    ('Solarized Dark', True, '#001E27', '#708284', '#4E6468', '#259286', '#001E27', '#B13E44', '#738A05', '#A57706', '#2176C7'),
+    ('Zenburn', True, '#3F3F3F', '#DCDCCC', '#ADADA2', '#8CD0D3', '#3F3F3F', '#947E79', '#60B48A', '#F0DFAF', '#506070'),
+    ('Molokai', True, '#121212', '#BBBBBB', '#888888', '#DFD460', '#121212', '#E5568B', '#98E123', '#DFD460', '#1080D0'),
+    ('Spacegray', True, '#20242D', '#B3B8C3', '#878C96', '#E5C179', '#20242D', '#B16F7B', '#87B379', '#E5C179', '#7D8FA4'),
+    ('Wild Cherry', True, '#1F1726', '#DAFAFF', '#A2B6BE', '#FFD16F', '#1F1726', '#D97DAD', '#2AB250', '#FFD16F', '#883CDC'),
+    ('Tomorrow Night', True, '#1D1F21', '#C5C8C6', '#939594', '#F0C674', '#1D1F21', '#CA8686', '#B5BD68', '#F0C674', '#81A2BE'),
+    ('Ayu Light', False, '#F8F9FA', '#5C6166', '#8B8F92', '#9E75C7', '#FFFFFF', '#BB686B', '#6CBF43', '#ECA944', '#3199E1'),
+    ('Catppuccin Latte', False, '#EFF1F5', '#4C4F69', '#7D8093', '#1E66F5', '#FFFFFF', '#A62449', '#40A02B', '#DF8E1D', '#1E66F5'),
+    ('Github Light', False, '#F6F8FA', '#1F2328', '#606367', '#0969DA', '#FFFFFF', '#95222C', '#1A7F37', '#9A6700', '#0969DA'),
+    ('One Light', False, '#F8F8F8', '#2A2B32', '#68686D', '#930092', '#FFFFFF', '#A03837', '#41933E', '#855504', '#315EEE'),
+    ('Kanagawa Lotus', False, '#F2ECBC', '#545464', '#83827E', '#4D699B', '#FFFFFF', '#A24759', '#6F894E', '#77713F', '#4D699B'),
+    ('Paper', False, '#F2EEDE', '#000000', '#494743', '#5C21A5', '#FFFFFF', '#892A1B', '#216609', '#B58900', '#1E6FCC'),
+    ('Spring', False, '#FFFFFF', '#4D4D4C', '#828282', '#8959A8', '#FFFFFF', '#C44D71', '#1F8C3B', '#1FC95B', '#1DD3EE'),
+    ('Light Owl', False, '#FBFBFB', '#403F53', '#787785', '#D6438A', '#FFFFFF', '#AA3E43', '#08916A', '#E0AF02', '#288ED7'),
+    ('Atom One Light', False, '#F9F9F9', '#2A2C33', '#686A6E', '#950095', '#FFFFFF', '#A33834', '#3F953A', '#D2B67C', '#2F5AF3'),
+    ('Belafonte Day', False, '#D5CCBA', '#45373C', '#706462', '#97522C', '#FFFFFF', '#961D1D', '#858162', '#EAA549', '#426A79'),
 ]
 
 

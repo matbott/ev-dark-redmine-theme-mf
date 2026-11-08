@@ -1443,6 +1443,126 @@ select[multiple],select[size],.query-columns select[multiple]{appearance:auto!im
     --s-accent: #59C2FF;  --s-on-accent: #0A0E14;
     --s-red: #FF3333;  --s-green: #C2D94C;  --s-yellow: #FF8F40;  --s-blue: #59C2FF;
   }
+  /* Gogh: Material Dark */
+  html[data-scheme="material-dark"] {
+    --s-bg: #232322;  --s-fg: #E5E5E5;  --s-muted: #ABABAA;
+    --s-accent: #F6981E;  --s-on-accent: #232322;
+    --s-red: #C65960;  --s-green: #457B24;  --s-yellow: #F6981E;  --s-blue: #134EB2;
+  }
+  /* Gogh: Palenight */
+  html[data-scheme="palenight"] {
+    --s-bg: #292D3E;  --s-fg: #BFC7D5;  --s-muted: #9299A8;
+    --s-accent: #FFCB6B;  --s-on-accent: #292D3E;
+    --s-red: #E08D97;  --s-green: #C3E88D;  --s-yellow: #FFCB6B;  --s-blue: #82AAFF;
+  }
+  /* Gogh: Cobalt2 */
+  html[data-scheme="cobalt2"] {
+    --s-bg: #132738;  --s-fg: #FFFFFF;  --s-muted: #B8BEC3;
+    --s-accent: #FFE50A;  --s-on-accent: #132738;
+    --s-red: #FF5454;  --s-green: #38DE21;  --s-yellow: #FFE50A;  --s-blue: #1460D2;
+  }
+  /* Gogh: Nightfox */
+  html[data-scheme="nightfox"] {
+    --s-bg: #192330;  --s-fg: #CDCECF;  --s-muted: #979B9F;
+    --s-accent: #DBC074;  --s-on-accent: #192330;
+    --s-red: #CA798D;  --s-green: #81B29A;  --s-yellow: #DBC074;  --s-blue: #719CD6;
+  }
+  /* Gogh: Solarized Dark */
+  html[data-scheme="solarized-dark"] {
+    --s-bg: #001E27;  --s-fg: #708284;  --s-muted: #4E6468;
+    --s-accent: #259286;  --s-on-accent: #001E27;
+    --s-red: #B13E44;  --s-green: #738A05;  --s-yellow: #A57706;  --s-blue: #2176C7;
+  }
+  /* Gogh: Zenburn */
+  html[data-scheme="zenburn"] {
+    --s-bg: #3F3F3F;  --s-fg: #DCDCCC;  --s-muted: #ADADA2;
+    --s-accent: #8CD0D3;  --s-on-accent: #3F3F3F;
+    --s-red: #947E79;  --s-green: #60B48A;  --s-yellow: #F0DFAF;  --s-blue: #506070;
+  }
+  /* Gogh: Molokai */
+  html[data-scheme="molokai"] {
+    --s-bg: #121212;  --s-fg: #BBBBBB;  --s-muted: #888888;
+    --s-accent: #DFD460;  --s-on-accent: #121212;
+    --s-red: #E5568B;  --s-green: #98E123;  --s-yellow: #DFD460;  --s-blue: #1080D0;
+  }
+  /* Gogh: Spacegray */
+  html[data-scheme="spacegray"] {
+    --s-bg: #20242D;  --s-fg: #B3B8C3;  --s-muted: #878C96;
+    --s-accent: #E5C179;  --s-on-accent: #20242D;
+    --s-red: #B16F7B;  --s-green: #87B379;  --s-yellow: #E5C179;  --s-blue: #7D8FA4;
+  }
+  /* Gogh: Wild Cherry */
+  html[data-scheme="wild-cherry"] {
+    --s-bg: #1F1726;  --s-fg: #DAFAFF;  --s-muted: #A2B6BE;
+    --s-accent: #FFD16F;  --s-on-accent: #1F1726;
+    --s-red: #D97DAD;  --s-green: #2AB250;  --s-yellow: #FFD16F;  --s-blue: #883CDC;
+  }
+  /* Gogh: Tomorrow Night */
+  html[data-scheme="tomorrow-night"] {
+    --s-bg: #1D1F21;  --s-fg: #C5C8C6;  --s-muted: #939594;
+    --s-accent: #F0C674;  --s-on-accent: #1D1F21;
+    --s-red: #CA8686;  --s-green: #B5BD68;  --s-yellow: #F0C674;  --s-blue: #81A2BE;
+  }
+  /* Gogh: Ayu Light */
+  html[data-scheme="ayu-light"] {
+    --s-bg: #F8F9FA;  --s-fg: #5C6166;  --s-muted: #8B8F92;
+    --s-accent: #9E75C7;  --s-on-accent: #FFFFFF;
+    --s-red: #BB686B;  --s-green: #6CBF43;  --s-yellow: #ECA944;  --s-blue: #3199E1;
+  }
+  /* Gogh: Catppuccin Latte */
+  html[data-scheme="catppuccin-latte"] {
+    --s-bg: #EFF1F5;  --s-fg: #4C4F69;  --s-muted: #7D8093;
+    --s-accent: #1E66F5;  --s-on-accent: #FFFFFF;
+    --s-red: #A62449;  --s-green: #40A02B;  --s-yellow: #DF8E1D;  --s-blue: #1E66F5;
+  }
+  /* Gogh: Github Light */
+  html[data-scheme="github-light"] {
+    --s-bg: #F6F8FA;  --s-fg: #1F2328;  --s-muted: #606367;
+    --s-accent: #0969DA;  --s-on-accent: #FFFFFF;
+    --s-red: #95222C;  --s-green: #1A7F37;  --s-yellow: #9A6700;  --s-blue: #0969DA;
+  }
+  /* Gogh: One Light */
+  html[data-scheme="one-light"] {
+    --s-bg: #F8F8F8;  --s-fg: #2A2B32;  --s-muted: #68686D;
+    --s-accent: #930092;  --s-on-accent: #FFFFFF;
+    --s-red: #A03837;  --s-green: #41933E;  --s-yellow: #855504;  --s-blue: #315EEE;
+  }
+  /* Gogh: Kanagawa Lotus */
+  html[data-scheme="kanagawa-lotus"] {
+    --s-bg: #F2ECBC;  --s-fg: #545464;  --s-muted: #83827E;
+    --s-accent: #4D699B;  --s-on-accent: #FFFFFF;
+    --s-red: #A24759;  --s-green: #6F894E;  --s-yellow: #77713F;  --s-blue: #4D699B;
+  }
+  /* Gogh: Paper */
+  html[data-scheme="paper"] {
+    --s-bg: #F2EEDE;  --s-fg: #000000;  --s-muted: #494743;
+    --s-accent: #5C21A5;  --s-on-accent: #FFFFFF;
+    --s-red: #892A1B;  --s-green: #216609;  --s-yellow: #B58900;  --s-blue: #1E6FCC;
+  }
+  /* Gogh: Spring */
+  html[data-scheme="spring"] {
+    --s-bg: #FFFFFF;  --s-fg: #4D4D4C;  --s-muted: #828282;
+    --s-accent: #8959A8;  --s-on-accent: #FFFFFF;
+    --s-red: #C44D71;  --s-green: #1F8C3B;  --s-yellow: #1FC95B;  --s-blue: #1DD3EE;
+  }
+  /* Gogh: Light Owl */
+  html[data-scheme="light-owl"] {
+    --s-bg: #FBFBFB;  --s-fg: #403F53;  --s-muted: #787785;
+    --s-accent: #D6438A;  --s-on-accent: #FFFFFF;
+    --s-red: #AA3E43;  --s-green: #08916A;  --s-yellow: #E0AF02;  --s-blue: #288ED7;
+  }
+  /* Gogh: Atom One Light */
+  html[data-scheme="atom-one-light"] {
+    --s-bg: #F9F9F9;  --s-fg: #2A2C33;  --s-muted: #686A6E;
+    --s-accent: #950095;  --s-on-accent: #FFFFFF;
+    --s-red: #A33834;  --s-green: #3F953A;  --s-yellow: #D2B67C;  --s-blue: #2F5AF3;
+  }
+  /* Gogh: Belafonte Day */
+  html[data-scheme="belafonte-day"] {
+    --s-bg: #D5CCBA;  --s-fg: #45373C;  --s-muted: #706462;
+    --s-accent: #97522C;  --s-on-accent: #FFFFFF;
+    --s-red: #961D1D;  --s-green: #858162;  --s-yellow: #EAA549;  --s-blue: #426A79;
+  }
 /* @schemes:end */
 
 /* ── colour scheme picker: top bar dropdown ─────────────────── */
