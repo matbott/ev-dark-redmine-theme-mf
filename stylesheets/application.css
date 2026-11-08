@@ -122,6 +122,9 @@ body::after{content:"";position:fixed;left:12px;top:12px;width:32px;height:32px;
 #loggedas{order:2;margin:0 8px 0 0;float:none;color:var(--muted);padding:0 8px;}
 #loggedas a{color:var(--link);}
 #top-menu #account{order:3;float:none;display:flex;margin:0;padding:0;}
+/* Redmine 6.x wraps the menus in .general-menu / .profile-menu: keep nav left, user right */
+#top-menu > .general-menu{order:1;}
+#top-menu > .profile-menu{order:2;margin-left:auto;}
 #account ul{display:flex;gap:2px;}
 #top-menu a{color:var(--muted);}
 #top-menu li a,#account li a{display:block;width:34px;height:34px;padding:0;margin:0;font-size:0;line-height:0;border-radius:8px;overflow:hidden;background:transparent;}
@@ -1467,9 +1470,10 @@ select[multiple],select[size],.query-columns select[multiple]{appearance:auto!im
    fall back to white instead of taking the selected colour scheme */
 .board,div.board,#board,.board-container,.board_box,.plugin-board,
 #content .columns > *,#content .column,
-#main .dashboard,.dashboard,.widgets,.widget,.columned,
+#main .dashboard,.dashboard,#dashboard,.dashboard-item,.dashboard-widget,
+.widgets,.widget,.columned,
 #content .box,#content fieldset.box,#content div.box{
-  background:var(--panel2)!important;color:var(--text)!important;border-color:var(--line)!important;
+  background:var(--panel2,#2a2d4b)!important;color:var(--text,#d9dbf0)!important;border-color:var(--line,#3a3d5f)!important;
 }
 
 /* =====================================================================
@@ -1492,20 +1496,20 @@ select[multiple],select[size],.query-columns select[multiple]{appearance:auto!im
   clear: both !important;
   margin: 10px 15px !important;
   padding: 8px 2px 2px !important;
-  background: var(--panel2) !important;
-  border: 1px solid var(--line) !important;
+  background: var(--panel2,#2a2d4b) !important;
+  border: 1px solid var(--line,#3a3d5f) !important;
   border-radius: 8px !important;
   box-sizing: border-box !important;
 }
 
-#rdb { background: var(--panel2) !important; }
+#rdb { background: var(--panel2,#2a2d4b) !important; }
 
 /* ── Hijos: forzar bordes (quitar fondo blanco de element.style) ── */
 #rdb *,
 #rdb-wrapper *,
 #rdb-board *,
 #rdb-taskboard * {
-  border-color: var(--line) !important;
+  border-color: var(--line,#3a3d5f) !important;
 }
 
 /* ── Header ── */
@@ -1514,8 +1518,8 @@ select[multiple],select[size],.query-columns select[multiple]{appearance:auto!im
 #rdb-taskboard .rdb-header,
 #rdb-taskboard > #rdb-header {
   padding: 7px 30px 7px 11px !important;
-  background: var(--panel) !important;
-  border-bottom: 1px solid var(--line) !important;
+  background: var(--panel,#222540) !important;
+  border-bottom: 1px solid var(--line,#3a3d5f) !important;
 }
 
 /* ── Footer ── */
@@ -1526,9 +1530,9 @@ select[multiple],select[size],.query-columns select[multiple]{appearance:auto!im
   padding: 5px 30px 10px !important;
   margin: 0 !important;
   font-size: 0.9em !important;
-  background: var(--panel) !important;
-  border-top: 1px solid var(--line) !important;
-  color: var(--muted) !important;
+  background: var(--panel,#222540) !important;
+  border-top: 1px solid var(--line,#3a3d5f) !important;
+  color: var(--muted,#8d91b6) !important;
 }
 
 /* ── Encabezados de grupo ── */
@@ -1539,9 +1543,9 @@ select[multiple],select[size],.query-columns select[multiple]{appearance:auto!im
   padding: 0 12px 0 20px !important;
   cursor: pointer !important;
   display: block !important;
-  background: var(--panel2) !important;
-  color: var(--text) !important;
-  border: 1px solid var(--line) !important;
+  background: var(--panel2,#2a2d4b) !important;
+  color: var(--text,#d9dbf0) !important;
+  border: 1px solid var(--line,#3a3d5f) !important;
   border-radius: 8px !important;
   text-decoration: none !important;
 }
@@ -1549,22 +1553,22 @@ select[multiple],select[size],.query-columns select[multiple]{appearance:auto!im
 .rdb-group-header a:hover,
 #rdb-wrapper .rdb-group-header a:hover,
 #rdb-taskboard .rdb-group-header a:hover {
-  background: var(--accent) !important;
-  color: var(--on-accent) !important;
+  background: var(--accent,#7b68ee) !important;
+  color: var(--on-accent,#ffffff) !important;
 }
 
 /* ── Enlaces dentro del board / taskboard ── */
 #rdb-board a,
 #rdb-taskboard a,
 #rdb-wrapper a {
-  color: var(--accent) !important;
+  color: var(--accent,#7b68ee) !important;
   text-decoration: underline !important;
 }
 
 #rdb-board a:hover,
 #rdb-taskboard a:hover,
 #rdb-wrapper a:hover {
-  color: var(--link-hover) !important;
+  color: var(--link-hover,#b4b5ff) !important;
 }
 
 /* ── Sobrescribir estilos inline (element.style inyectado por JS) ── */
@@ -1581,9 +1585,9 @@ select[multiple],select[size],.query-columns select[multiple]{appearance:auto!im
 .rdb-group-header a[style],
 #rdb-wrapper .rdb-group-header a[style],
 #rdb-taskboard .rdb-group-header a[style] {
-  background: var(--panel2) !important;
-  border-color: var(--line) !important;
-  color: var(--text) !important;
+  background: var(--panel2,#2a2d4b) !important;
+  border-color: var(--line,#3a3d5f) !important;
+  color: var(--text,#d9dbf0) !important;
 }
 
 /* ── Sin max-width forzado: el board respeta el layout ── */
@@ -1591,3 +1595,14 @@ select[multiple],select[size],.query-columns select[multiple]{appearance:auto!im
 #rdb-wrapper,
 #rdb-board,
 #rdb-taskboard { max-width: none !important; }
+
+/* ── Safety net: board internals must never stay white ── */
+#rdb-board,#rdb-taskboard,#rdb-wrapper,#rdb{color:var(--text,#d9dbf0)!important;}
+#rdb-board *,#rdb-taskboard *,#rdb-wrapper *,#rdb *{border-color:var(--line,#3a3d5f)!important;}
+.rdb-column,.rdb-column-content,.rdb-card,.rdb-task,.rdb-group,
+#rdb-board .column,#rdb-taskboard .column,
+.rdb-group-header{
+  background:var(--panel,#222540)!important;
+  color:var(--text,#d9dbf0)!important;
+  border-color:var(--line,#3a3d5f)!important;
+}

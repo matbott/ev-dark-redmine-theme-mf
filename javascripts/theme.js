@@ -296,7 +296,8 @@
   function init() {
     highlightNavLabels();
     buildLogoLink();
-    buildThemeControls();
+    // Top-bar palette removed: scheme selection lives in My account (#rm-schemes).
+    // buildThemeControls();
     initSchemeSettings();
     applyScheme(currentSchemeId());
   }
