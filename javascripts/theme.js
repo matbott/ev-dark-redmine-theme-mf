@@ -90,6 +90,12 @@
     { id: 'ros-pine', name: 'Rosé Pine', dark: true, swatch: ['#191724', '#E0DEF4', '#C4A7E7'] },
     { id: 'solarized-light', name: 'Solarized Light', dark: false, swatch: ['#FCF4DC', '#42535A', '#1F70BD'] },
     { id: 'gruvbox-light', name: 'Gruvbox Light', dark: false, swatch: ['#FBF1C7', '#3C3836', '#3B7174'] },
+    { id: 'one-dark-pro', name: 'One Dark Pro', dark: true, swatch: ['#282C34', '#ABB2BF', '#61AFEF'] },
+    { id: 'catppuccin-macchiato', name: 'Catppuccin Macchiato', dark: true, swatch: ['#24273A', '#CAD3F5', '#8AADF4'] },
+    { id: 'github-dark', name: 'GitHub Dark', dark: true, swatch: ['#101216', '#E6EDF3', '#58A6FF'] },
+    { id: 'kanagawa-wave', name: 'Kanagawa Wave', dark: true, swatch: ['#1F1F28', '#DCD7BA', '#7E9CD8'] },
+    { id: 'monokai-pro', name: 'Monokai Pro', dark: true, swatch: ['#2D2A2E', '#FCFCFA', '#FC9867'] },
+    { id: 'ayu-dark', name: 'Ayu Dark', dark: true, swatch: ['#0A0E14', '#B3B1AD', '#59C2FF'] },
     // @schemes:end
   ];
   var RECENT_MAX = 4;

@@ -115,13 +115,13 @@ body::after{content:"";position:fixed;left:12px;top:12px;width:32px;height:32px;
 
 /* ---------- floating top bar ---------- */
 #top-menu{position:fixed;top:12px;left:calc(var(--rail) + 20px);right:20px;height:48px;z-index:25;box-sizing:border-box;
-  display:flex;align-items:center;gap:6px;padding:0 10px;background:var(--panel);color:var(--muted);
+  display:flex;align-items:center;justify-content:flex-start;gap:6px;padding:0 10px;background:var(--panel);color:var(--muted);
   border:1px solid var(--line);border-radius:14px;box-shadow:0 6px 24px rgba(0,0,0,.25);font-size:12px;}
 #top-menu ul{order:1;display:flex;margin:0;padding:0;list-style:none;gap:2px;}
 #top-menu li{float:none;margin:0;padding:0;}
 #loggedas{order:2;margin-left:auto;float:none;color:var(--muted);padding:0 8px;}
 #loggedas a{color:var(--link);}
-#account{order:3;float:none;display:flex;margin:0;padding:0;margin-left:auto;}
+#top-menu #account{order:3;float:none;display:flex;margin:0;padding:0;margin-left:auto;}
 #account ul{display:flex;gap:2px;}
 #top-menu a{color:var(--muted);}
 #top-menu li a,#account li a{display:block;width:34px;height:34px;padding:0;margin:0;font-size:0;line-height:0;border-radius:8px;overflow:hidden;background:transparent;}
@@ -1399,6 +1399,42 @@ select[multiple],select[size],.query-columns select[multiple]{appearance:auto!im
     --s-accent: #3B7174;  --s-on-accent: #FFFFFF;
     --s-red: #CC241D;  --s-green: #98971A;  --s-yellow: #D79921;  --s-blue: #458588;
   }
+  /* Gogh: One Dark Pro */
+  html[data-scheme="one-dark-pro"] {
+    --s-bg: #282C34;  --s-fg: #ABB2BF;  --s-muted: #3F4451;
+    --s-accent: #61AFEF;  --s-on-accent: #282C34;
+    --s-red: #E06C75;  --s-green: #98C379;  --s-yellow: #D19A66;  --s-blue: #61AFEF;
+  }
+  /* Gogh: Catppuccin Macchiato */
+  html[data-scheme="catppuccin-macchiato"] {
+    --s-bg: #24273A;  --s-fg: #CAD3F5;  --s-muted: #494D64;
+    --s-accent: #8AADF4;  --s-on-accent: #24273A;
+    --s-red: #ED8796;  --s-green: #A6DA95;  --s-yellow: #EED49F;  --s-blue: #8AADF4;
+  }
+  /* Gogh: GitHub Dark */
+  html[data-scheme="github-dark"] {
+    --s-bg: #101216;  --s-fg: #E6EDF3;  --s-muted: #484F58;
+    --s-accent: #58A6FF;  --s-on-accent: #101216;
+    --s-red: #FF7B72;  --s-green: #56D364;  --s-yellow: #E3B341;  --s-blue: #58A6FF;
+  }
+  /* Gogh: Kanagawa Wave */
+  html[data-scheme="kanagawa-wave"] {
+    --s-bg: #1F1F28;  --s-fg: #DCD7BA;  --s-muted: #090618;
+    --s-accent: #7E9CD8;  --s-on-accent: #1F1F28;
+    --s-red: #C34043;  --s-green: #76946A;  --s-yellow: #C0A36E;  --s-blue: #7E9CD8;
+  }
+  /* Gogh: Monokai Pro */
+  html[data-scheme="monokai-pro"] {
+    --s-bg: #2D2A2E;  --s-fg: #FCFCFA;  --s-muted: #2D2A2E;
+    --s-accent: #FC9867;  --s-on-accent: #2D2A2E;
+    --s-red: #FF6188;  --s-green: #A9DC76;  --s-yellow: #FFD866;  --s-blue: #FC9867;
+  }
+  /* Gogh: Ayu Dark */
+  html[data-scheme="ayu-dark"] {
+    --s-bg: #0A0E14;  --s-fg: #B3B1AD;  --s-muted: #0A0E14;
+    --s-accent: #59C2FF;  --s-on-accent: #0A0E14;
+    --s-red: #FF3333;  --s-green: #C2D94C;  --s-yellow: #FF8F40;  --s-blue: #59C2FF;
+  }
 /* @schemes:end */
 
 /* ── colour scheme picker: top bar dropdown ─────────────────── */
@@ -1430,7 +1466,8 @@ select[multiple],select[size],.query-columns select[multiple]{appearance:auto!im
 /* Board plugin containers: force the theme palette so boards never
    fall back to white instead of taking the selected colour scheme */
 .board,div.board,#board,.board-container,.board_box,
-#content .columns > *,#content .column{
+#content .columns > *,#content .column,
+#main .dashboard,.dashboard,.widgets,.widget,.columned{
   background:var(--panel2)!important;color:var(--text)!important;border-color:var(--line)!important;
 }
 

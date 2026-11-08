@@ -33,6 +33,12 @@ SCHEMES = [
     ('Rosé Pine',        True,  '#191724', '#E0DEF4', '#A8A6BA', '#C4A7E7', '#191724', '#EB6F92', '#31748F', '#F6C177', '#9CCFD8'),
     ('Solarized Light', False, '#FCF4DC', '#42535A', '#647071', '#1F70BD', '#FFFFFF', '#D11C24', '#738A05', '#A57706', '#2176C7'),
     ('Gruvbox Light',   False, '#FBF1C7', '#3C3836', '#716C5F', '#3B7174', '#FFFFFF', '#CC241D', '#98971A', '#D79921', '#458588'),
+    ('One Dark Pro',      True,  '#282C34', '#ABB2BF', '#3F4451', '#61AFEF', '#282C34', '#E06C75', '#98C379', '#D19A66', '#61AFEF'),
+    ('Catppuccin Macchiato', True, '#24273A', '#CAD3F5', '#494D64', '#8AADF4', '#24273A', '#ED8796', '#A6DA95', '#EED49F', '#8AADF4'),
+    ('GitHub Dark',       True,  '#101216', '#E6EDF3', '#484F58', '#58A6FF', '#101216', '#FF7B72', '#56D364', '#E3B341', '#58A6FF'),
+    ('Kanagawa Wave',     True,  '#1F1F28', '#DCD7BA', '#090618', '#7E9CD8', '#1F1F28', '#C34043', '#76946A', '#C0A36E', '#7E9CD8'),
+    ('Monokai Pro',       True,  '#2D2A2E', '#FCFCFA', '#2D2A2E', '#FC9867', '#2D2A2E', '#FF6188', '#A9DC76', '#FFD866', '#FC9867'),
+    ('Ayu Dark',          True,  '#0A0E14', '#B3B1AD', '#0A0E14', '#59C2FF', '#0A0E14', '#FF3333', '#C2D94C', '#FF8F40', '#59C2FF'),
 ]
 
 
