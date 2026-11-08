@@ -211,7 +211,7 @@
       opt.setAttribute('data-scheme-id', s.id);
       var dot = document.createElement('span');
       dot.className = 'rm-scheme-dot';
-      dot.style.background = 'linear-gradient(135deg,' + s.swatch[0] + ',' + s.swatch[2] + ')';
+      dot.style.background = 'linear-gradient(135deg, ' + s.swatch[0] + ' 50%, ' + s.swatch[2] + ' 50%)';
       var name = document.createElement('span');
       name.className = 'rm-scheme-name';
       name.textContent = s.name;
@@ -271,7 +271,7 @@
           card.setAttribute('aria-checked', s.id === currentSchemeId() ? 'true' : 'false');
           var dot = document.createElement('span');
           dot.className = 'rm-scheme-dot';
-          dot.style.background = 'linear-gradient(135deg,' + s.swatch[0] + ',' + s.swatch[2] + ')';
+          dot.style.background = 'linear-gradient(135deg, ' + s.swatch[0] + ' 50%, ' + s.swatch[2] + ' 50%)';
           var name = document.createElement('span');
           name.className = 'rm-scheme-name';
           name.textContent = s.name;

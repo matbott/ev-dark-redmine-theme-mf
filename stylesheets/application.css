@@ -1449,7 +1449,7 @@ select[multiple],select[size],.query-columns select[multiple]{appearance:auto!im
 #rm-scheme-menu .rm-scheme-opt:hover{background:var(--panel);color:var(--text);}
 #rm-scheme-menu .rm-scheme-opt.selected{background:var(--accent);color:var(--on-accent);}
 #rm-scheme-menu .rm-scheme-opt.selected .rm-scheme-name{font-weight:600;}
-.rm-scheme-dot{flex:0 0 auto;width:22px;height:22px;border-radius:6px;border:1px solid var(--line);background:linear-gradient(135deg,var(--rm-scheme-a),var(--rm-scheme-b));}
+.rm-scheme-dot{flex:0 0 auto;width:22px;height:22px;border-radius:50%;border:1px solid var(--line);background:linear-gradient(135deg,var(--rm-scheme-a) 50%,var(--rm-scheme-b) 50%);}
 .rm-scheme-name{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 
 /* ── colour scheme picker: My account cards ─────────────────── */
@@ -1474,3 +1474,120 @@ select[multiple],select[size],.query-columns select[multiple]{appearance:auto!im
 
 /* =====================================================================
    FIXES v2 */
+
+/* ============================================================
+   VIEW CUSTOMIZE — Plugin Taskboard / Board (rdb-*)
+   Adaptado al theme Ev Dark (tokens propios del theme)
+   IDs: #rdb, #rdb-wrapper, #rdb-board, #rdb-taskboard
+   Mapeo: --c-surface -> --panel2 (contenedor), --c-surface-2 -> --panel (header/footer),
+         --c-border -> --line, --c-text -> --text, --c-text-muted -> --muted,
+         --c-primary -> --accent, --c-primary-hover -> --link-hover, --c-primary-light -> --accent
+   ============================================================ */
+
+/* ── Contenedores principales ── */
+#rdb,
+#rdb-wrapper,
+#rdb-board,
+#rdb-taskboard {
+  clear: both !important;
+  margin: 10px 15px !important;
+  padding: 8px 2px 2px !important;
+  background: var(--panel2) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 8px !important;
+  box-sizing: border-box !important;
+}
+
+#rdb { background: var(--panel2) !important; }
+
+/* ── Hijos: forzar bordes (quitar fondo blanco de element.style) ── */
+#rdb *,
+#rdb-wrapper *,
+#rdb-board *,
+#rdb-taskboard * {
+  border-color: var(--line) !important;
+}
+
+/* ── Header ── */
+#rdb-header,
+#rdb-wrapper .rdb-header,
+#rdb-taskboard .rdb-header,
+#rdb-taskboard > #rdb-header {
+  padding: 7px 30px 7px 11px !important;
+  background: var(--panel) !important;
+  border-bottom: 1px solid var(--line) !important;
+}
+
+/* ── Footer ── */
+#rdb-footer,
+#rdb-wrapper .rdb-footer,
+#rdb-taskboard .rdb-footer,
+#rdb-taskboard > #rdb-footer {
+  padding: 5px 30px 10px !important;
+  margin: 0 !important;
+  font-size: 0.9em !important;
+  background: var(--panel) !important;
+  border-top: 1px solid var(--line) !important;
+  color: var(--muted) !important;
+}
+
+/* ── Encabezados de grupo ── */
+.rdb-group-header a,
+#rdb-wrapper .rdb-group-header a,
+#rdb-taskboard .rdb-group-header a {
+  position: relative !important;
+  padding: 0 12px 0 20px !important;
+  cursor: pointer !important;
+  display: block !important;
+  background: var(--panel2) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+}
+
+.rdb-group-header a:hover,
+#rdb-wrapper .rdb-group-header a:hover,
+#rdb-taskboard .rdb-group-header a:hover {
+  background: var(--accent) !important;
+  color: var(--on-accent) !important;
+}
+
+/* ── Enlaces dentro del board / taskboard ── */
+#rdb-board a,
+#rdb-taskboard a,
+#rdb-wrapper a {
+  color: var(--accent) !important;
+  text-decoration: underline !important;
+}
+
+#rdb-board a:hover,
+#rdb-taskboard a:hover,
+#rdb-wrapper a:hover {
+  color: var(--link-hover) !important;
+}
+
+/* ── Sobrescribir estilos inline (element.style inyectado por JS) ── */
+#rdb[style],
+#rdb-wrapper[style],
+#rdb-board[style],
+#rdb-taskboard[style],
+#rdb-header[style],
+#rdb-wrapper .rdb-header[style],
+#rdb-taskboard .rdb-header[style],
+#rdb-footer[style],
+#rdb-wrapper .rdb-footer[style],
+#rdb-taskboard .rdb-footer[style],
+.rdb-group-header a[style],
+#rdb-wrapper .rdb-group-header a[style],
+#rdb-taskboard .rdb-group-header a[style] {
+  background: var(--panel2) !important;
+  border-color: var(--line) !important;
+  color: var(--text) !important;
+}
+
+/* ── Sin max-width forzado: el board respeta el layout ── */
+#rdb,
+#rdb-wrapper,
+#rdb-board,
+#rdb-taskboard { max-width: none !important; }
