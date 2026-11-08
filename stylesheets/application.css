@@ -738,8 +738,13 @@ fieldset.collapsible > legend:hover::before{background:var(--icon-hover);}
 fieldset.collapsible > legend > svg,legend.icon-expended > svg,legend.icon-collapsed > svg{display:none!important;}
 
 /* 4. Image-only arrows/handles: invert the dark image to a light one */
-#sidebar-switch-button,.expander,.sort-handle,a.toggle-checkboxes,.toggle-all-arrow,.handle{filter:invert(1) brightness(.85);}
-#sidebar-switch-button:hover{filter:invert(1) brightness(1.2);}
+.expander,.sort-handle,a.toggle-checkboxes,.toggle-all-arrow,.handle{filter:invert(1) brightness(.85);}
+/* Redmine 6/7 sidebar toggle (SVG button): style directly. The invert filter
+   used to flip core's light-grey hover background into a black strip. */
+#sidebar-switch-button{filter:none!important;color:var(--muted)!important;background:transparent!important;border-radius:8px!important;}
+#sidebar-switch-button svg{stroke:currentColor!important;fill:none!important;}
+#sidebar-switch-button:hover{background:var(--panel2,#2a2d4b)!important;color:var(--text)!important;}
+#sidebar-switch-button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
 
 /* =====================================================================
    FIXES v10 - filled s20 icon-rtl invisible on dark background + spacing
