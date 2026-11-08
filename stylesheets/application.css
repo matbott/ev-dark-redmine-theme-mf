@@ -121,7 +121,7 @@ body::after{content:"";position:fixed;left:12px;top:12px;width:32px;height:32px;
 #top-menu li{float:none;margin:0;padding:0;}
 #loggedas{order:2;margin-left:auto;float:none;color:var(--muted);padding:0 8px;}
 #loggedas a{color:var(--link);}
-#top-menu #account{order:3;float:none;display:flex;margin:0;padding:0;margin-left:auto;}
+#top-menu #account{order:3;float:none;display:flex;margin:0;padding:0;}
 #account ul{display:flex;gap:2px;}
 #top-menu a{color:var(--muted);}
 #top-menu li a,#account li a{display:block;width:34px;height:34px;padding:0;margin:0;font-size:0;line-height:0;border-radius:8px;overflow:hidden;background:transparent;}
@@ -1438,7 +1438,7 @@ select[multiple],select[size],.query-columns select[multiple]{appearance:auto!im
 /* @schemes:end */
 
 /* ── colour scheme picker: top bar dropdown ─────────────────── */
-#rm-scheme-wrap{position:relative;order:4;display:block!important;width:auto!important;float:none!important;overflow:visible!important;}
+#rm-scheme-wrap{position:relative;order:4;display:block!important;width:auto!important;float:none!important;overflow:visible!important;margin-left:auto;}
 #rm-scheme-trigger{order:0;display:flex;align-items:center;justify-content:center;width:34px;height:34px;box-sizing:border-box;padding:0;margin:0;background:var(--panel2);border:1px solid var(--line);border-radius:8px;color:var(--muted);cursor:pointer;overflow:visible!important;}
 #rm-scheme-trigger:hover{color:var(--text);background:var(--panel);}
 #rm-scheme-trigger .rm-scheme-glyph{font-size:16px;line-height:1;display:block;}
@@ -1465,9 +1465,10 @@ select[multiple],select[size],.query-columns select[multiple]{appearance:auto!im
 /* ---------- board plugin / board views ---------- */
 /* Board plugin containers: force the theme palette so boards never
    fall back to white instead of taking the selected colour scheme */
-.board,div.board,#board,.board-container,.board_box,
+.board,div.board,#board,.board-container,.board_box,.plugin-board,
 #content .columns > *,#content .column,
-#main .dashboard,.dashboard,.widgets,.widget,.columned{
+#main .dashboard,.dashboard,.widgets,.widget,.columned,
+#content .box,#content fieldset.box,#content div.box{
   background:var(--panel2)!important;color:var(--text)!important;border-color:var(--line)!important;
 }
 
