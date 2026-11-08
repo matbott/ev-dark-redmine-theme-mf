@@ -55,6 +55,15 @@
 
 }
 
+/* light fallbacks when no scheme is selected and light mode is on */
+html:not(.dark-mode){
+  color-scheme: light;
+  --bg:#f2f4f9; --panel:#ffffff; --panel2:#e9ecf5; --row:#ffffff; --row-hover:#e8ebf4; --line:#d4d8e7;
+  --text:#1b1e36; --muted:#5a617f; --link:#5546d6; --link-hover:#6a5ae0;
+  --accent:#7b68ee; --good:#177245; --info:#1a7f9e; --warn:#9a6a00; --danger:#c03040;
+  --rail:56px; --th-bg:#dfe3f2; --th-color:#5546d6; --row-alt:#f4f5fa;
+}
+
 /* ---------- base ---------- */
 html,body{background:var(--bg);color:var(--text);}
 body{font:13px/1.5 Inter,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;}
@@ -112,7 +121,7 @@ body::after{content:"";position:fixed;left:12px;top:12px;width:32px;height:32px;
 #top-menu li{float:none;margin:0;padding:0;}
 #loggedas{order:2;margin-left:auto;float:none;color:var(--muted);padding:0 8px;}
 #loggedas a{color:var(--link);}
-#account{order:3;float:none;display:flex;margin:0;padding:0;}
+#account{order:3;float:none;display:flex;margin:0;padding:0;margin-left:auto;}
 #account ul{display:flex;gap:2px;}
 #top-menu a{color:var(--muted);}
 #top-menu li a,#account li a{display:block;width:34px;height:34px;padding:0;margin:0;font-size:0;line-height:0;border-radius:8px;overflow:hidden;background:transparent;}
@@ -153,7 +162,7 @@ table.list tbody tr:hover,table.list tbody tr.context-menu-selection{background:
 table.list tbody td{border:0;border-bottom:1px solid var(--line);padding:9px 8px;color:var(--text);text-align:center;background:transparent;}
 table.list tbody tr:last-child td{border-bottom:0;}
 table.list td.subject,table.list td.name,table.list td.title,table.list td.description,table.list td.comments{text-align:left;}
-table.list td.subject{background:linear-gradient(color-mix(in srgb, var(--good) 16%, transparent),color-mix(in srgb, var(--good) 16%, transparent)) center/calc(100% - 16px) calc(100% - 14px) no-repeat;padding-left:14px;}
+table.list td.subject{background:transparent;}
 table.list tbody tr td:first-child{border-left:3px solid var(--good);}
 table.list tbody tr td.checkbox{border-left:3px solid var(--good);}
 table.list tr.issue a,table.list tbody a{color:var(--link);}
@@ -161,7 +170,7 @@ table.list tr.issue td.subject a{color:var(--text);}
 table.list tr.issue.closed,table.list tr.issue.closed a{color:var(--muted);}
 table.list tr.issue.overdue td.due_date{color:var(--danger);}
 /* priority colours */
-table.list td.priority{color:var(--good);}
+table.list td.priority{color:var(--good);text-align:left;}
 table.list tr.priority-lowest td.priority,table.list tr.priority-low2 td.priority,table.list tr.priority-3 td.priority{color:var(--muted);}
 table.list tr.priority-high td.priority,table.list tr.priority-high1 td.priority,table.list tr.priority-5 td.priority{color:var(--warn);}
 table.list tr.priority-high2 td.priority,table.list tr.priority-high3 td.priority,table.list tr.priority-6 td.priority{color:var(--info);}
@@ -169,8 +178,6 @@ table.list tr.priority-highest td.priority,table.list tr.priority-7 td.priority{
 table.list tr.priority-high2 td:first-child,table.list tr.priority-high3 td:first-child,table.list tr.priority-6 td:first-child{border-left-color:var(--info);}
 table.list tr.priority-highest td:first-child,table.list tr.priority-7 td:first-child{border-left-color:var(--danger);}
 table.list tr.priority-high td:first-child,table.list tr.priority-5 td:first-child{border-left-color:var(--warn);}
-table.list tr.priority-high2 td.subject,table.list tr.priority-6 td.subject{background-image:linear-gradient(color-mix(in srgb, var(--info) 16%, transparent),color-mix(in srgb, var(--info) 16%, transparent));}
-table.list tr.priority-highest td.subject{background-image:linear-gradient(color-mix(in srgb, var(--danger) 16%, transparent),color-mix(in srgb, var(--danger) 16%, transparent));}
 table.list tr.group td,table.list tr.group{background:var(--panel2)!important;color:var(--text);}
 table.list td.buttons a,table.list td.buttons{color:var(--muted);}
 .autoscroll{border-radius:10px;}
@@ -277,7 +284,7 @@ table.cal th{background:var(--panel2);}
 #main-menu ul{display:block!important;position:static!important;width:auto!important;height:auto!important;margin:0!important;padding:0!important;overflow:visible!important;background:transparent!important;}
 #main-menu li{display:block!important;float:none!important;width:auto!important;height:auto!important;margin:4px 8px!important;padding:0!important;background:transparent!important;border:0!important;}
 #main-menu li a,#main-menu li a.selected{display:block!important;overflow:visible!important;background-color:transparent;color:var(--muted)!important;border:0!important;box-shadow:none;}
-#main-menu li a:hover{background-color:var(--panel2);color:#fff!important;}
+#main-menu li a:hover{background-color:var(--panel2);color:var(--text)!important;}
 #main-menu li a.selected,#main-menu li a.selected:hover{background-color:var(--accent);color:var(--on-accent)!important;}
 #main-menu li a::before{background-color:currentColor!important;}
 #main-menu li a:hover::after,#main-menu li a:focus::after{content:attr(data-label);position:absolute;left:50px;top:50%;transform:translateY(-50%);
@@ -310,8 +317,8 @@ body.controller-settings div.tabs:not(.jstTabs) ul,body.controller-projects.acti
 body.controller-settings div.tabs:not(.jstTabs) ul li a,body.controller-projects.action-settings div.tabs:not(.jstTabs) ul li a{display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:10px;
   min-height:92px;padding:16px 8px!important;box-sizing:border-box;background:var(--panel2)!important;color:var(--text)!important;border:1px solid var(--line)!important;border-radius:16px!important;
   font-weight:500;text-align:center;transition:transform .15s,border-color .15s,box-shadow .15s,background .15s;}
-body.controller-settings div.tabs:not(.jstTabs) ul li a:hover,body.controller-projects.action-settings div.tabs:not(.jstTabs) ul li a:hover{transform:translateY(-3px);border-color:var(--accent)!important;box-shadow:0 10px 24px color-mix(in srgb, var(--accent) 25%, transparent);color:#fff!important;}
-body.controller-settings div.tabs:not(.jstTabs) ul li a.selected,body.controller-projects.action-settings div.tabs:not(.jstTabs) ul li a.selected{background:linear-gradient(135deg,var(--accent),var(--accent))!important;border-color:transparent!important;color:#fff!important;box-shadow:0 10px 26px color-mix(in srgb, var(--accent) 40%, transparent);}
+body.controller-settings div.tabs:not(.jstTabs) ul li a:hover,body.controller-projects.action-settings div.tabs:not(.jstTabs) ul li a:hover{transform:translateY(-3px);border-color:var(--accent)!important;box-shadow:0 10px 24px color-mix(in srgb, var(--accent) 25%, transparent);color:var(--text)!important;}
+body.controller-settings div.tabs:not(.jstTabs) ul li a.selected,body.controller-projects.action-settings div.tabs:not(.jstTabs) ul li a.selected{background:linear-gradient(135deg,var(--accent),var(--accent))!important;border-color:transparent!important;color:var(--on-accent)!important;box-shadow:0 10px 26px color-mix(in srgb, var(--accent) 40%, transparent);}
 body.controller-settings div.tabs:not(.jstTabs) ul li a::before,body.controller-projects.action-settings div.tabs:not(.jstTabs) ul li a::before,
 #content #admin-menu li a::before{content:"";display:block;width:32px;height:32px;--i:var(--ic-folder);
   background:linear-gradient(135deg,var(--accent),var(--info));-webkit-mask:var(--i) center/contain no-repeat;mask:var(--i) center/contain no-repeat;-webkit-mask-image:var(--i);mask-image:var(--i);}
@@ -331,7 +338,7 @@ body.controller-settings div.tabs:not(.jstTabs) ul li a::before,body.controller-
 #content #admin-menu li a.info::before,#content #admin-menu li a.icon-info::before{--i:var(--ic-help)}
 #content #admin-menu li a.administration::before,#content #admin-menu li a.icon-administration::before{--i:var(--ic-admin)}
 #content #admin-menu li a.time-entries::before,#content #admin-menu li a.icon-time-entries::before{--i:var(--ic-clock)}
-body.controller-settings div.tabs:not(.jstTabs) ul li a.selected::before,body.controller-projects.action-settings div.tabs:not(.jstTabs) ul li a.selected::before{background:#fff;}
+body.controller-settings div.tabs:not(.jstTabs) ul li a.selected::before,body.controller-projects.action-settings div.tabs:not(.jstTabs) ul li a.selected::before{background:var(--on-accent);}
 #tab-general::before{--i:var(--ic-cog)}        #tab-display::before{--i:var(--ic-monitor)}  #tab-authentication::before{--i:var(--ic-lock)}
 #tab-api::before{--i:var(--ic-code)}            #tab-projects::before{--i:var(--ic-folder)}   #tab-issues::before{--i:var(--ic-issues)}
 #tab-timelog::before{--i:var(--ic-clock)}       #tab-attachments::before{--i:var(--ic-clip)}  #tab-notifications::before{--i:var(--ic-bell)}
@@ -347,7 +354,7 @@ body.controller-settings div.tabs:not(.jstTabs) ul li a.selected::before,body.co
 #content #admin-menu li a{display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-height:124px;padding:20px 10px!important;
   background:var(--panel2)!important;color:var(--text)!important;border:1px solid var(--line);border-radius:18px;font-weight:500;text-align:center;background-image:none!important;
   transition:transform .15s,border-color .15s,box-shadow .15s;}
-#content #admin-menu li a:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 12px 28px color-mix(in srgb, var(--accent) 28%, transparent);color:#fff!important;}
+#content #admin-menu li a:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 12px 28px color-mix(in srgb, var(--accent) 28%, transparent);color:var(--text)!important;}
 #content #admin-menu li a::before{width:40px;height:40px;}
 #admin-menu a.icon{padding-left:0;}
 #sidebar #admin-menu ul{list-style:none;margin:0;padding:0;}
@@ -383,9 +390,9 @@ table.list thead th,table.list thead th:hover,table.list th,table#time-report th
   background:var(--th-bg)!important;color:var(--th-color)!important;font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
   border:0!important;border-bottom:2px solid var(--accent)!important;padding:12px 8px;white-space:nowrap;}
 table.list thead th a,table.list thead th a:visited,table.list thead th a:hover{color:var(--th-color)!important;}
-table.list thead th.sort-asc a,table.list thead th.sort-desc a,table.list thead th a.sort{color:#fff!important;}
+table.list thead th.sort-asc a,table.list thead th.sort-desc a,table.list thead th a.sort{color:var(--th-color)!important;}
 table.list tbody th{background:var(--panel2)!important;color:var(--link)!important;text-transform:none;letter-spacing:0;font-size:12px;border-bottom:1px solid var(--line)!important;}
-table.list tr.group td,table.list tr.group th,table.list tr.group{background:var(--panel2)!important;color:#fff;}
+table.list tr.group td,table.list tr.group th,table.list tr.group{background:var(--panel2)!important;color:var(--text)!important;}
 table.list tfoot td{border-top:1px solid var(--line)!important;}
 .autoscroll,div.autoscroll table{background:transparent;}
 #content .query-totals,#content p.query-totals{color:var(--muted);}
@@ -491,7 +498,7 @@ table.CodeRay,table.syntaxhl{border:1px solid var(--line)!important;border-radiu
 .syntaxhl span.variable,.CodeRay span.variable,pre code span.variable,code.syntaxhl span.variable{color:var(--warn)!important;}
 .syntaxhl span.tag,.CodeRay span.tag,pre code span.tag,code.syntaxhl span.tag{color:var(--danger)!important;}
 .syntaxhl span.important,.CodeRay span.important,pre code span.important,code.syntaxhl span.important{color:var(--danger)!important;font-weight:600;}
-.syntaxhl span.error,.CodeRay span.error,pre code span.error,code.syntaxhl span.error{color:#ffffff!important;background:var(--danger)!important;}
+.syntaxhl span.error,.CodeRay span.error,pre code span.error,code.syntaxhl span.error{color:var(--text)!important;background:var(--danger)!important;}
 .syntaxhl span.attribute-name,.CodeRay span.attribute-name,pre code span.attribute-name,code.syntaxhl span.attribute-name{color:var(--warn)!important;}
 .syntaxhl span.entity,.CodeRay span.entity,pre code span.entity,code.syntaxhl span.entity{color:var(--warn)!important;}
 .syntaxhl span.escape,.CodeRay span.escape,pre code span.escape,code.syntaxhl span.escape{color:var(--warn)!important;}
@@ -521,7 +528,7 @@ table.filecontent th.line-num,table.filecontent td.line-num{background:var(--bg)
 #main-menu li > a::before{width:20px!important;height:20px!important;margin:10px!important;flex:0 0 20px;}
 /* "+" button: same size, subtle tile so it reads as an action */
 #main-menu a.new-object,#main-menu li:has(> ul.menu-children) > a{background-color:var(--panel2)!important;color:var(--info)!important;}
-#main-menu a.new-object:hover,#main-menu li:has(> ul.menu-children) > a:hover{background-color:var(--accent)!important;color:#fff!important;}
+#main-menu a.new-object:hover,#main-menu li:has(> ul.menu-children) > a:hover{background-color:var(--accent)!important;color:var(--on-accent)!important;}
 
 /* rail expands on hover and shows the names next to the icons */
 #main-menu,#main-menu.tabs{transition:width .18s ease,box-shadow .18s ease;}
@@ -550,7 +557,7 @@ div.jstTabs ul{position:static!important;display:flex!important;gap:4px;margin:0
 div.jstTabs ul li{display:block!important;float:none!important;margin:0!important;}
 div.jstTabs ul li a{display:block!important;min-height:0!important;padding:7px 16px!important;font-size:12.5px;font-weight:500;color:var(--muted)!important;
   background:transparent!important;border:0!important;border-bottom:2px solid transparent!important;border-radius:8px 8px 0 0!important;box-shadow:none!important;transform:none!important;}
-div.jstTabs ul li a:hover{color:#fff!important;background:var(--panel2)!important;}
+div.jstTabs ul li a:hover{color:var(--text)!important;background:var(--panel2)!important;}
 div.jstTabs ul li a.selected{color:var(--text)!important;background:var(--panel2)!important;border-bottom-color:var(--accent)!important;}
 div.jstTabs ul li a::before{display:none!important;content:none!important;}
 div.jstTabs .tab-elements,div.jstTabs .jstElements{float:none!important;position:static!important;display:flex;flex-wrap:wrap;gap:4px;justify-content:flex-end;margin:0!important;}
@@ -596,14 +603,14 @@ div.jstElements span.jstSpacer{width:8px;}
 #context-menu a.disabled,#context-menu a.disabled:hover{background:var(--panel2)!important;color:var(--muted)!important;opacity:.5;cursor:default;}
 #context-menu hr{border-color:var(--line)!important;background:var(--line)!important;}
 #context-menu a svg,#context-menu a .icon-svg{color:var(--link)!important;stroke:currentColor!important;}
-#context-menu a:hover svg,#context-menu a:hover .icon-svg,#context-menu li:hover > a svg{color:#fff!important;}
+#context-menu a:hover svg,#context-menu a:hover .icon-svg,#context-menu li:hover > a svg{color:var(--icon-hover)!important;}
 #context-menu a.icon-checked svg,#context-menu a.icon-checked .icon-svg{color:var(--good)!important;}
 /* submenu arrow: replace the dark one with a light chevron */
 #context-menu li.folder > a::after,#context-menu a.submenu::after{display:none!important;content:none!important;}
 #context-menu li.folder{position:relative;}
 #context-menu li.folder::after{content:"";position:absolute;right:8px;top:50%;width:16px;height:16px;margin-top:-8px;background:var(--muted);pointer-events:none;
   -webkit-mask:var(--ic-chev) center/contain no-repeat;mask:var(--ic-chev) center/contain no-repeat;}
-#context-menu li.folder:hover::after{background:#fff;}
+#context-menu li.folder:hover::after{background:var(--icon-hover);}
 
 /* --- 3. Priority colours: High = yellow, Urgent = orange, Immediate = red (text, left stripe, subject tint) --- */
 table.list tr.priority-high td.priority,table.list tr.priority-high1 td.priority,table.list tr.priority-5 td.priority{color:var(--yellow)!important;}
@@ -612,9 +619,6 @@ table.list tr.priority-high3 td.priority,table.list tr.priority-highest td.prior
 table.list tr.priority-high td:first-child,table.list tr.priority-high1 td:first-child,table.list tr.priority-5 td:first-child{border-left-color:var(--yellow)!important;}
 table.list tr.priority-high2 td:first-child,table.list tr.priority-6 td:first-child{border-left-color:var(--orange)!important;}
 table.list tr.priority-high3 td:first-child,table.list tr.priority-highest td:first-child,table.list tr.priority-7 td:first-child{border-left-color:var(--danger)!important;}
-table.list tr.priority-high td.subject,table.list tr.priority-high1 td.subject,table.list tr.priority-5 td.subject{background-image:linear-gradient(color-mix(in srgb, var(--warn) 16%, transparent),color-mix(in srgb, var(--warn) 16%, transparent));}
-table.list tr.priority-high2 td.subject,table.list tr.priority-6 td.subject{background-image:linear-gradient(color-mix(in srgb, var(--warn) 17%, transparent),color-mix(in srgb, var(--warn) 17%, transparent));}
-table.list tr.priority-high3 td.subject,table.list tr.priority-highest td.subject,table.list tr.priority-7 td.subject{background-image:linear-gradient(color-mix(in srgb, var(--danger) 17%, transparent),color-mix(in srgb, var(--danger) 17%, transparent));}
 /* same colours for priority labels elsewhere (issue page, cards) */
 .priority-high,.priority-high1{--pc:var(--yellow);} .priority-high2{--pc:var(--orange);} .priority-high3,.priority-highest{--pc:var(--danger);}
 div.issue .priority.priority-high,div.issue .priority.priority-high1{color:var(--yellow);}
@@ -708,14 +712,14 @@ a.user svg,span.user svg,.assigned-to svg,.author svg{
 a:hover svg,a:hover .icon-svg,button:hover svg,a.icon:hover svg{color:var(--icon-hover)!important;}
 /* icons inside colored/active controls stay white */
 #content input[type=submit] svg,.button svg,a.button svg,.tabs ul li a.selected svg,
-body.controller-settings div.tabs ul li a.selected svg{color:#fff!important;}
+body.controller-settings div.tabs ul li a.selected svg{color:var(--on-accent)!important;}
 /* keep my own top bar / rail icons untouched (they are CSS masks) */
 #main-menu a svg,#top-menu a svg{display:none!important;}
 
 /* 2. Table header sort arrows (the original PNG arrows are dark) */
 table.list thead th a.sort,table.list thead th a.sort.asc,table.list thead th a.sort.desc{
   background-image:none!important;position:relative;padding-right:18px!important;}
-table.list thead th a.sort::after{content:"";position:absolute;right:0;top:50%;width:13px;height:13px;margin-top:-6.5px;background:#fff;
+table.list thead th a.sort::after{content:"";position:absolute;right:0;top:50%;width:13px;height:13px;margin-top:-6.5px;background:var(--icon-color);
   -webkit-mask:var(--ic-down) center/contain no-repeat;mask:var(--ic-down) center/contain no-repeat;}
 table.list thead th a.sort.asc::after{-webkit-mask-image:var(--ic-up);mask-image:var(--ic-up);}
 table.list thead th a.sort.desc::after{-webkit-mask-image:var(--ic-down);mask-image:var(--ic-down);}
@@ -753,7 +757,7 @@ svg.icon-rtl,svg.s20{vertical-align:middle;display:inline-block;margin:0 5px;fle
 #content div.tabs ~ *,#content [id^="tab-content"]{margin-top:0;}
 [id^="tab-content"],#tab-content-general,.tab-content{padding-bottom:16px!important;margin-bottom:18px!important;}
 /* selected tab keeps its white icon */
-.tabs ul li a.selected svg,.tabs ul li a.selected svg *{fill:#fff!important;stroke:#fff!important;color:#fff!important;}
+.tabs ul li a.selected svg,.tabs ul li a.selected svg *{fill:var(--on-accent)!important;stroke:var(--on-accent)!important;color:var(--on-accent)!important;}
 
 /* =====================================================================
    FIXES v11 - stubborn dark icon + Gantt header / Calendar white boxes
@@ -779,7 +783,7 @@ svg.icon-rtl,svg.s20,.icon-rtl{vertical-align:middle;margin:0 5px;}
 .gantt_hdr a,.gantt_hdr span,.gantt_hdr td,.gantt_hdr div{color:var(--th-color)!important;background:transparent!important;}
 .gantt_hdr_noday,.gantt_hdr_nonworkdate{background:var(--row)!important;color:var(--muted)!important;}
 .gantt_hdr_monday,.gantt_hdr_sunday{background:var(--panel2)!important;}
-.gantt_hdr a:hover{color:#fff!important;}
+.gantt_hdr a:hover{color:var(--accent)!important;}
 /* gantt body / subjects / task lines on dark */
 .gantt_subjects,.gantt_subjects_column,#gantt_area,.gantt_content,.task,table.gantt-table,.gantt-table td{
   background:transparent!important;color:var(--text)!important;}
@@ -800,7 +804,7 @@ table.cal td.odd,table.cal td.even{background:var(--row)!important;}
 table.cal td.nwday,table.cal td.other-month{background:var(--panel2)!important;color:var(--muted)!important;}
 table.cal td.today{background:color-mix(in srgb, var(--accent) 22%, transparent)!important;box-shadow:inset 0 0 0 1px var(--accent);}
 table.cal td span.day-num,table.cal td a{color:var(--link)!important;}
-table.cal td a:hover{color:#fff!important;}
+table.cal td a:hover{color:var(--link-hover)!important;}
 table.cal .week-number,table.cal td.week-number{background:var(--panel2)!important;color:var(--muted)!important;}
 /* calendar header row (month nav) */
 .calheader,.cal .calheader{background:transparent!important;color:var(--text)!important;}
@@ -826,7 +830,7 @@ ul.cal .label-week{color:var(--muted)!important;font-size:10px;}
 ul.cal li.calbody,ul.cal .calbody{background:var(--row)!important;color:var(--text)!important;border-color:var(--line)!important;}
 ul.cal li.other-month,ul.cal .other-month{background:var(--panel2)!important;color:var(--muted)!important;}
 ul.cal li.nwday,ul.cal .nwday{background:var(--panel2)!important;color:var(--muted)!important;}
-ul.cal li.today,ul.cal .today{background:color-mix(in srgb, var(--accent) 22%, transparent)!important;box-shadow:inset 0 0 0 1px var(--accent);color:#fff!important;}
+ul.cal li.today,ul.cal .today{background:color-mix(in srgb, var(--accent) 22%, transparent)!important;box-shadow:inset 0 0 0 1px var(--accent);color:var(--on-accent)!important;}
 /* day numbers + abbreviations */
 ul.cal p.day-num,ul.cal .day-num{background:transparent!important;margin:0;color:inherit!important;}
 ul.cal span.day-value{color:var(--text)!important;}
@@ -834,13 +838,13 @@ ul.cal .other-month span.day-value,ul.cal .nwday span.day-value{color:var(--mute
 ul.cal span.abbr-day{color:var(--muted)!important;font-size:10px;}
 /* links / issues inside calendar cells */
 ul.cal a,ul.cal a.issue{color:var(--link)!important;}
-ul.cal a:hover{color:#fff!important;}
+ul.cal a:hover{color:var(--link-hover)!important;}
 
 /* --- 2. Right-sidebar arrows: recolour SVG ones, invert PNG/image ones --- */
 #sidebar svg,#sidebar svg *,#sidebar .icon-svg,#sidebar .icon-svg *{
   fill:var(--icon-color)!important;stroke:var(--icon-color)!important;color:var(--icon-color)!important;}
 #sidebar a:hover svg,#sidebar a:hover svg *,#sidebar button:hover svg,#sidebar .expander:hover{
-  fill:#fff!important;stroke:#fff!important;color:#fff!important;}
+  fill:var(--icon-hover)!important;stroke:var(--icon-hover)!important;color:var(--icon-hover)!important;}
 /* dark PNG arrow icons (expander / collapse / sort arrows) in the sidebar */
 #sidebar .expander,#sidebar img[src*="arrow"],#sidebar img[src*="bullet"],#sidebar img[src*="toggle"],
 #sidebar a.icon img,#sidebar .toggle-all-arrow,#sidebar .sort-handle{
@@ -901,7 +905,7 @@ button.move-left svg,button.move-right svg,.query-columns button svg{
   display:block!important;margin:0!important;padding:0!important;color:var(--icon-color)!important;
   fill:none!important;stroke:currentColor!important;flex-shrink:0!important;}
 button.move-left:hover,button.move-right:hover{background:var(--accent)!important;color:var(--on-accent)!important;border-color:transparent!important;}
-button.move-left:hover svg,button.move-right:hover svg{color:#fff!important;}
+button.move-left:hover svg,button.move-right:hover svg{color:var(--icon-hover)!important;}
 
 /* --- 2. Multiple-column selects (query-columns) and all selects: dark like the calendar --- */
 .query-columns select,select[multiple],select,textarea,input[type="text"],input[type="password"],
@@ -929,8 +933,8 @@ select:focus,textarea:focus,input:focus{outline:none!important;border-color:var(
 #top-menu a.projects::before{--i:var(--ic-folder)!important;
   content:""!important;display:block!important;width:19px!important;height:19px!important;margin:7.5px!important;
   background:currentColor!important;-webkit-mask:var(--i) center/contain no-repeat!important;mask:var(--i) center/contain no-repeat!important;}
-#top-menu a.projects:hover{color:#fff!important;background:var(--panel2)!important;}
-#top-menu a.projects.selected,#top-menu a.projects.selected:hover{color:#fff!important;background:var(--accent)!important;}
+#top-menu a.projects:hover{color:var(--text)!important;background:var(--panel2)!important;}
+#top-menu a.projects.selected,#top-menu a.projects.selected:hover{color:var(--on-accent)!important;background:var(--accent)!important;}
 /* hide the real svg icon if the browser renders one inside the link */
 #top-menu a.projects svg{display:none!important;}
 /* same safety net for every top-menu item: text hidden, mask icon shown */
@@ -938,14 +942,14 @@ select:focus,textarea:focus,input:focus{outline:none!important;border-color:var(
 #top-menu li a::before{width:19px!important;height:19px!important;margin:7.5px!important;}
 
 /* --- 2. Activity page: dark section headers + readable rows --- */
-#activity h3,#content h3{background:transparent!important;color:#fff!important;border-bottom:1px solid var(--line)!important;padding:8px 4px!important;margin:14px 0 8px!important;}
+#activity h3,#content h3{background:transparent!important;color:var(--text)!important;border-bottom:1px solid var(--line)!important;padding:8px 4px!important;margin:14px 0 8px!important;}
 /* event rows */
 #activity dt{background:var(--row)!important;color:var(--text)!important;border:0!important;border-bottom:1px solid var(--line)!important;
   padding:8px 10px!important;display:flex!important;align-items:center!important;flex-wrap:wrap!important;gap:6px!important;}
 #activity dt.grouped{border-top:0!important;}
 #activity dt svg.s18,#activity dt svg.icon-svg{color:var(--icon-color)!important;fill:none!important;stroke:currentColor!important;flex-shrink:0!important;}
 #activity dt a{color:var(--link)!important;}
-#activity dt a:hover{color:#fff!important;}
+#activity dt a:hover{color:var(--link-hover)!important;}
 #activity dt .time{color:var(--muted)!important;font-size:11px;}
 #activity dt .project{color:var(--muted)!important;font-size:11px;background:var(--panel2)!important;border-radius:6px;padding:2px 8px;}
 #activity dt .project a,#activity dt .project{color:var(--muted)!important;}
@@ -1005,8 +1009,8 @@ h3 svg.icon-svg,h2 svg.icon-svg,h4 svg.icon-svg,
 h3 .s18,h2 .s18,h4 .s18{
   color:var(--icon-color)!important;fill:none!important;stroke:currentColor!important;
   vertical-align:middle!important;margin-right:6px!important;}
-h3.icon:hover,h2.icon:hover{color:#fff!important;}
-h3.icon:hover svg,h2.icon:hover svg{color:#fff!important;}
+h3.icon:hover,h2.icon:hover{color:var(--text)!important;}
+h3.icon:hover svg,h2.icon:hover svg{color:var(--text)!important;}
 
 /* =====================================================================
    FIXES v20 - dot fallback returns on some pages (activity etc.): make
@@ -1027,9 +1031,9 @@ h3.icon:hover svg,h2.icon:hover svg{color:#fff!important;}
 #admin-menu a.icon,#sidebar #admin-menu a.icon{
   color:var(--icon-color)!important;}
 #admin-menu a.icon:hover,#sidebar #admin-menu a.icon:hover{
-  color:#fff!important;}
+  color:var(--icon-hover)!important;}
 #admin-menu a.icon.selected,#sidebar #admin-menu a.icon.selected{
-  color:#fff!important;}
+  color:var(--on-accent)!important;}
 #admin-menu a.icon svg.icon-svg,#sidebar #admin-menu a.icon svg.icon-svg,
 #admin-menu a.icon .s18,#sidebar #admin-menu a.icon .s18{
   color:currentColor!important;fill:none!important;stroke:currentColor!important;
@@ -1045,7 +1049,7 @@ svg.icon-svg,svg.s18.icon-svg,svg.s20.icon-svg,svg.s14.icon-svg,svg.s24.icon-svg
   color:var(--icon-color)!important;fill:none!important;stroke:currentColor!important;
   vertical-align:middle!important;}
 a:hover svg.icon-svg,a.selected svg.icon-svg{
-  color:#fff!important;}
+  color:var(--icon-hover)!important;}
 /* NOTE: base ::before fallbacks are set via --i (folder), per-item rules
    set --i too - NO direct mask-image overrides here or they'd kill the
    per-item icons */
@@ -1156,7 +1160,7 @@ html[dir="rtl"] .pagination .pages,html[dir="rtl"] .pagination{direction:rtl;}
 #login-form label a.lost_password{
   float:right;font-size:11px;font-weight:500;text-transform:none;
   color:var(--link);text-decoration:none;}
-#login-form label a.lost_password:hover{color:#fff;text-decoration:underline;}
+#login-form label a.lost_password:hover{color:var(--link-hover)!important;text-decoration:underline;}
 #login-form input[type="text"],#login-form input[type="password"]{
   width:100%;box-sizing:border-box;padding:10px 12px;font-size:14px;
   color:var(--text);background:var(--bg);border:1px solid var(--line);
@@ -1166,7 +1170,7 @@ html[dir="rtl"] .pagination .pages,html[dir="rtl"] .pagination{direction:rtl;}
 #login-form input[type="text"],#login-form input[type="password"]{direction:ltr;text-align:left;}
 #login-form input#login-submit{
   margin-top:6px;padding:11px 16px;font-size:14px;font-weight:600;
-  color:#fff!important;background:linear-gradient(135deg,var(--accent),var(--accent))!important;
+  color:var(--on-accent)!important;background:linear-gradient(135deg,var(--accent),var(--accent))!important;
   border:0!important;border-radius:10px;cursor:pointer;
   box-shadow:0 8px 22px color-mix(in srgb, var(--accent) 40%, transparent);transition:filter .15s,transform .1s;width:100%;}
 #login-form input#login-submit:hover{filter:brightness(1.12);}
@@ -1209,7 +1213,7 @@ html[dir="rtl"] #login-form input[type="text"],html[dir="rtl"] #login-form input
 .journal h4.journal-header a.user{color:var(--link)!important;font-weight:600;}
 .journal h4.journal-header a.user:hover{color:var(--link-hover)!important;}
 .journal h4.journal-header .journal-info a:not(.user){color:var(--muted)!important;}
-.journal h4.journal-header .journal-info a:not(.user):hover{color:#fff!important;}
+.journal h4.journal-header .journal-info a:not(.user):hover{color:var(--link-hover)!important;}
 /* avatar span (e.g. "RN") keeps its own colour classes, just round it */
 .journal h4.journal-header .avatar{border-radius:50%!important;flex-shrink:0!important;}
 /* private-notes marker span must never paint anything weird */
@@ -1219,11 +1223,11 @@ html[dir="rtl"] #login-form input[type="text"],html[dir="rtl"] #login-form input
   display:flex!important;align-items:center!important;gap:8px!important;
   color:var(--muted)!important;flex-shrink:0;}
 .journal h4.journal-header .journal-link{color:var(--link)!important;font-weight:600;}
-.journal h4.journal-header .journal-link:hover{color:#fff!important;}
+.journal h4.journal-header .journal-link:hover{color:var(--link-hover)!important;}
 .journal h4.journal-header .journal-actions a,
 .journal h4.journal-header .journal-actions .icon{color:var(--muted)!important;background:transparent!important;}
 .journal h4.journal-header .journal-actions a:hover,
-.journal h4.journal-header .journal-actions .icon:hover{color:#fff!important;background:var(--panel)!important;border-radius:8px;}
+.journal h4.journal-header .journal-actions .icon:hover{color:var(--icon-hover)!important;background:var(--panel)!important;border-radius:8px;}
 /* note body inside journal stays readable */
 .journal .wiki,.journal .journal-notes,.journal div.wiki{color:var(--text)!important;}
 /* the "Updated by ..." line inside the header is muted, not invisible */
@@ -1421,6 +1425,14 @@ select[multiple],select[size],.query-columns select[multiple]{appearance:auto!im
 #rm-schemes .rm-scheme-card.selected{background:linear-gradient(135deg,var(--accent),var(--accent));border-color:transparent;color:var(--on-accent);box-shadow:0 10px 26px color-mix(in srgb, var(--accent) 40%, transparent);}
 #rm-schemes .rm-scheme-card .rm-scheme-dot{width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg,var(--rm-scheme-a),var(--rm-scheme-b));border-color:transparent;}
 #rm-schemes .rm-scheme-card .rm-scheme-name{text-align:center;}
+
+/* ---------- board plugin / board views ---------- */
+/* Board plugin containers: force the theme palette so boards never
+   fall back to white instead of taking the selected colour scheme */
+.board,div.board,#board,.board-container,.board_box,
+#content .columns > *,#content .column{
+  background:var(--panel2)!important;color:var(--text)!important;border-color:var(--line)!important;
+}
 
 /* =====================================================================
    FIXES v2 */
