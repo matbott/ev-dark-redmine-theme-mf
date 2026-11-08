@@ -119,7 +119,7 @@ body::after{content:"";position:fixed;left:12px;top:12px;width:32px;height:32px;
   border:1px solid var(--line);border-radius:14px;box-shadow:0 6px 24px rgba(0,0,0,.25);font-size:12px;}
 #top-menu ul{order:1;display:flex;margin:0;padding:0;list-style:none;gap:2px;}
 #top-menu li{float:none;margin:0;padding:0;}
-#loggedas{order:2;margin-left:auto;float:none;color:var(--muted);padding:0 8px;}
+#loggedas{order:2;margin:0 8px 0 0;float:none;color:var(--muted);padding:0 8px;}
 #loggedas a{color:var(--link);}
 #top-menu #account{order:3;float:none;display:flex;margin:0;padding:0;}
 #account ul{display:flex;gap:2px;}
